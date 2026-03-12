@@ -1,0 +1,3 @@
+g++ titik.cpp -framework OpenGL -framework GLUT -o titik
+
+./titik
