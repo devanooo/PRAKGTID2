@@ -94,7 +94,7 @@ void awan(){
 }
 
 
-//
+
 
 int main(int argc, char* argv[]){
     glutInit(&argc, argv);
@@ -111,4 +111,3 @@ int main(int argc, char* argv[]){
 }
 
 
-//asdasdasd
