@@ -2,6 +2,108 @@
 #include <math.h>
 #define PI 3.14159265359
 
+
+void jalan(){
+    glPushMatrix();
+        glColor3f(0.2,0.2,0.2);
+        
+        glBegin(GL_POLYGON);
+            glVertex2f(1,-0.6);
+            glVertex2f(-1,-0.60);
+            glVertex2f(-1,-1);
+            glVertex2f(1,-1);
+        glEnd();
+    glPopMatrix();
+
+
+    glPushMatrix();
+        glColor3f(0.2,0.2,0.2);
+        glBegin(GL_POLYGON);
+            glVertex2f(1,-0.6);
+            glVertex2f(-1,-0.60);
+            glVertex2f(-1,-1);
+            glVertex2f(1,-1);
+        glEnd();
+    glPopMatrix();
+
+    glPushMatrix();
+        glColor3f(1,1,1);
+        glTranslatef(-0.5,-0.6,0);
+        glScalef(0.25,0.25,1);
+        glBegin(GL_POLYGON);
+            glVertex2f(1,-0.6);
+            glVertex2f(-1,-0.60);
+            glVertex2f(-1,-1);
+            glVertex2f(1,-1);
+        glEnd();
+    glPopMatrix();
+
+    glPushMatrix();
+        glColor3f(1,1,1);
+        glTranslatef(0,-0.6,0);
+        glScalef(0.25,0.25,1);
+        glBegin(GL_POLYGON);
+            glVertex2f(1,-0.6);
+            glVertex2f(-1,-0.60);
+            glVertex2f(-1,-1);
+            glVertex2f(1,-1);
+        glEnd();
+    glPopMatrix();
+}
+
+
+void lamer(){
+    glPushMatrix();
+    glColor3f(1,1,1);
+    glTranslatef(0.8,0,0);
+    glBegin(GL_POLYGON);
+        glVertex2f(-0.15,0.7);  
+        glVertex2f(0.1,0.7);  
+        glVertex2f(0.1,0.2);  
+        glVertex2f(-0.15,0.2);  
+    glEnd();
+    glPopMatrix();
+    
+    glPushMatrix();
+        glColor3f(1,1,1);
+        glTranslatef(0.81,0,0);
+        glBegin(GL_POLYGON);
+            glVertex2f(-0.08,0.2);  
+            glVertex2f(0.006,0.2);  
+            glVertex2f(0.006,-0.6);  
+            glVertex2f(-0.08,-0.6);  
+        glEnd();
+    glPopMatrix();
+
+        glColor3f(1.0, 0, 0);
+        glTranslatef(0.773,0.6,1);
+        glBegin(GL_POLYGON);
+        GLint circle_points = 100;
+        float angle;
+        float radius = 0.08;
+        for(int i = 0; i <circle_points; i++){
+            angle = 2*PI*i/circle_points;
+            float x = radius * cos(angle);
+            float y = radius * sin(angle);
+            glVertex3f(x,y,0);
+        }
+        glEnd();
+    
+
+        glColor3f(1.0, 1, 0);
+        glTranslatef(0.773,0.3,1);
+        glBegin(GL_POLYGON);
+        float angle;
+        float radius = 0.08;
+        for(int i = 0; i <circle_points; i++){
+            angle = 2*PI*i/circle_points;
+            float x = radius * cos(angle);
+            float y = radius * sin(angle);
+            glVertex3f(x,y,0);
+        }
+        glEnd();
+}
+
 void display (void){
     glClear(GL_COLOR_BUFFER_BIT);
     glPushMatrix();
@@ -106,7 +208,7 @@ void display (void){
             glVertex2f(-0.05, -0.12); // kiri atas
         glEnd();
     glPopMatrix();
-
+    //lampu mbl
     glPushMatrix();
         glColor3f(1.0, 0.4, 0.0);
         glBegin(GL_POLYGON);
@@ -116,6 +218,10 @@ void display (void){
             glVertex2f(-0.70,-0.40);
         glEnd();
     glPopMatrix();
+
+    jalan();
+
+    lamer();
     glFlush();
 }   
 
