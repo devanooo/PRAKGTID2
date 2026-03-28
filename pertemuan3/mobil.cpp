@@ -160,9 +160,7 @@ void bulan(){
     glPopMatrix();
 }
 
-void detailmobil(){
-    
-}
+
 void display (void){
     glClear(GL_COLOR_BUFFER_BIT);
     
@@ -273,8 +271,8 @@ void display (void){
     glPopMatrix();
     //lampu mbl
     glPushMatrix();
-        glColor3f(1.0, 0.4, 0.0);
         glBegin(GL_POLYGON);
+            glColor3f(1.0, 0.4, 0.0);
             glVertex2f(-0.80,-0.40);
             glVertex2f(-0.80,-0.30);
             glVertex2f(-0.70,-0.30);
@@ -282,8 +280,9 @@ void display (void){
         glEnd();
     glPopMatrix();
 
-    jalan();
+     
 
+    jalan();
     
     lamer();
 
